@@ -186,8 +186,11 @@ def formiraj_indirektne_letove(letovi, par_gradova, naziv_datoteke):
 def main():
     try:
         # Učitavanje para gradova sa standardnog ulaza
-        par_gradova = input().strip()
-        
+        try:
+            par_gradova = input().strip()
+        except EOFError:
+            return
+
         if not par_gradova:
             return
         
